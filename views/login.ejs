@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadMinds</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        header nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        header nav a:hover {
+            color: #007bff;
+        }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') no-repeat center center/cover;
+            height: 140vh;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            background-blend-mode: overlay;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            color: white; /* Changed to white */
+            padding-bottom: 10px; /* Reduced padding */
+        }
+        .hero p {
+            font-size: 18px;
+            margin: 20px 0;
+            color: white; /* Changed color */
+            padding-top: 10px; /* Reduced padding */
+        }
+        
+        .login-form {
+            background: #333; /* Changed table color */
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 300px; /* Fixed size */
+            text-align: center; /* Centered text within the form */
+            margin: auto; /* Center the form horizontally */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content vertically */
+        }
+        .login-form h2 {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .login-form label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+            padding: 0 5px; /* Added padding for alignment */
+        }
+        .login-form input[type="email"],
+        .login-form input[type="password"] {
+            width: calc(100% - 20px); /* Adjust width to account for padding */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensures padding is included in width */
+        }
+        .login-form button {
+            width: 100%;
+            padding: 12px; /* Increased padding for button */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-form button:hover {
+            background-color: #0056b3;
+        }
+        .login-form p {
+            font-size: 14px;
+            margin-top: 15px;
+            color: #ccc;
+        }
+        .login-form p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .login-form p a:hover {
+            text-decoration: underline;
+        }
+        .info-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .info-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .info-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ReadMinds</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Help</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Welcome to ReadMinds BookStore</h1>
+        <p>Your one-stop platform for finding, buying, and enjoying books online.</p>
+        
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="loginForm" action="/loginSubmit" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+        </div>  
+        <div class="info-section">
+            <h2>Why Choose Us?</h2>
+            <p>Discover a wide range of books, easy-to-use features, and a community of fellow book lovers.</p>
+            <p><strong>Featured Books:</strong> Explore our curated selection of bestsellers, new releases, and classic literature. We have something for every reader!</p>
+            <p><strong>Benefits:</strong> Enjoy personalized recommendations, seamless browsing experience, and exclusive discounts on your favorite books.</p>
+            <p><strong>What Our Users Say:</strong> "BookStore has transformed the way I find and buy books. The recommendations are spot on, and the customer service is excellent!" - A satisfied customer.</p>
+        </div>
+    </div>
+</body>
+</html>

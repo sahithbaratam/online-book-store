@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadMinds</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+<header class="header">
+    <div class="header-1">
+        <a href="#" class="logo"> <i class="fas fa-book"></i> ReadMinds </a>
+        <div class="dashboard-container" class="search-bar">
+
+        <form action="" class="search-form">
+            <input type="search" id="searchInput" placeholder="Search Online Books.." id="search-box">
+            <label for="search-box" onclick="searchBooks()" class="fas fa-search"></label>
+        </form>
+        </div>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="/payment" class="fas fa-shopping-cart"></a>
+            <div class="fas fa-user"></div>
+            <div id="login-btn"><a href="/login">Logout</a></div>
+        </div>
+        <div id="searchModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="bookResults"></div>
+            </div>
+        </div>
+        <div id="searchModal" style="display: none;">
+            <div id="modalContent">
+                <div id="loadingIndicator" style="display: none;">Loading...</div>
+                <div id="bookResults" class="book-results"></div>
+            </div>
+        </div>
+    </div>
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#featured">featured</a>
+            <a href="#arrivals">Free Books</a>
+            <a href="#reviews">reviews</a>
+            <a href="#footer">feedback</a>
+        </nav>
+    </div>
+</header>
+<div class="login-form-container">
+    <div id="close-login-btn" class="fas fa-times"></div>
+</div>
+
+<section class="home" id="home">
+    <div class="row">
+        <div class="content">
+            <h1>A book of your Choice</h1>
+            <p>If you need any book, ReadMinds has great deals on a wide range of books. Shop for these books from top authors and avail hugely discounted prices</p>
+            <a href="#" class="btn">shop now</a>
+        </div>
+
+        <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide"><img src="/images/Book1.jpeg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/images/Book2.jpeg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/images/Book3.jpeg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/images/Book4.jpeg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/images/Book5.jpeg" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="/images/Book6.jpeg" alt=""></a>
+            </div>
+            <img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/stand.png" class="stand" alt="">
+        </div>
+    </div>
+
+</section>
+
+<section class="icons-container">
+    <div class="icons">
+        <i class="fas fa-shipping-fast"></i>
+        <div class="content">
+            <h3>free shipping</h3>
+            <p>order over ₹500</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-lock"></i>
+        <div class="content">
+            <h3>secure payment</h3>
+            <p>100% secure payment</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-redo-alt"></i>
+        <div class="content">
+            <h3>easy returns</h3>
+            <p>10 days returns</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-headset"></i>
+        <div class="content">
+            <h3>24/7 support</h3>
+            <p>call us anytime</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="featured" id="featured">
+    <h1 class="heading"> <span>featured books</span> </h1>
+    <div class="swiper featured-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="/images/Book1.jpeg" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                   <a href="#"> <img src="/images/Book1.jpeg" alt=""> </a>
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">₹499 <span>₹1000</span></div>
+                    <a href="/payment" class="btn">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="/images/Book2.jpeg" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <a href="#"> <img src="/images/Book2.jpeg" alt=""> </a>
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">₹699 <span>₹1000</span></div>
+                    <a href="/payment" class="btn">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="/images/Book3.jpeg" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <a href="product.html"><img src="/images/Book3.jpeg" alt=""> </a>
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">₹499 <span>₹1100</span></div>
+                    <a href="/payment" class="btn">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="/images/Book4.jpeg" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="/images/Book4.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">₹399 <span>₹1000</span></div>
+                    <a href="/payment" class="btn">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="/images/Book5.jpeg" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="/images/Book5.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">₹499 <span>₹1100</span></div>
+                    <a href="/payment" class="btn">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="/images/Book6.jpeg" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="/images/Book6.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">₹699 <span>₹1100</span></div>
+                    <a href="/payment" class="btn">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="/images/Book7.jpeg" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="/images/Book7.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">₹699 <span>₹1000</span></div>
+                    <a href="/payment" class="btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<section class="arrivals" id="arrivals">
+    <h1 class="heading"> <span>Free Online Books</span> </h1>
+    <div class="swiper arrivals-slider">
+        <div class="swiper-wrapper">
+            <a href="/images/Free1.jpeg" class="swiper-slide box">
+                <div class="image">
+                    <img src="/images/Free1.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Free Book 1</h3>
+                </div>
+            </a>
+
+            <a href="/images/Free2.jpeg" class="swiper-slide box">
+                <div class="image">
+                    <img src="/images/Free2.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Free Book 2</h3> 
+                </div>
+            </a>
+
+            <a href="/images/Free3.jpeg" class="swiper-slide box">
+                <div class="image">
+                    <img src="/images/Free3.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Free Book 3</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="swiper arrivals-slider">
+        <div class="swiper-wrapper">
+            <a href="/images/Free4.jpeg" class="swiper-slide box">
+                <div class="image">
+                    <img src="/images/Free4.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Free Book 4</h3>  
+                </div>
+            </a>
+
+            <a href="/images/Free5.jpeg" class="swiper-slide box">
+                <div class="image">
+                    <img src="/images/Free5.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Free Book 5</h3> 
+                </div>
+            </a>
+
+            <a href="/images/Free6.jpeg" class="swiper-slide box">
+                <div class="image">
+                    <img src="/images/Free6.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Free Book 6</h3> 
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="reviews" id="reviews">
+    <h1 class="heading"> <span>Customer Reviews</span> </h1>
+    <div class="swiper reviews-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+                <img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/pic-1.png" alt="">
+                <h3>John </h3>
+                <p>First of all it customer service is excellent. We get all author book for Mumbai University. People should try here affordable and best price.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/pic-2.png" alt="">
+                <h3>Marry </h3>
+                <p>Best book store almost all books are available for prepartion of exam related or other books are available on reaonable price also.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/pic-3.png" alt="">
+                <h3>Raghu </h3>
+                <p>Customer Service is good. Greetings to customer and making the required Books available to Customers is very good.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer" id="footer">
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+    </div>
+</section>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="/script.js"></script>
+
+</body>
+</html>
